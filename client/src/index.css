@@ -13,4 +13,5 @@
 
 html,body{
   cursor: url('./assets/circle-fill.svg'), auto;
+  scroll-behavior: smooth;
 }

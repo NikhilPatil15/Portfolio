@@ -1,4 +1,4 @@
-import { HeroSection } from "./components"
+import { HeroSection, ProjectsSection } from "./components"
 
 function App() {
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <>
   <HeroSection/>
-  
+  <ProjectsSection/>
     </>
   )
 }

@@ -22,6 +22,17 @@ const navItems: navItem[] = [
 
 // Turn Navbar into a forwardRef component
 const Navbar = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props, ref) => {
+
+  
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, link: string) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(link);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  
   return (
     <nav
       className="w-[100%] max-w-[1220px] flex justify-between py-[2rem] px-[2rem] md:px-[4rem] items-center font-semibold mt-[2rem] text-sm md:text-lg absolute top-0 right-[50%] translate-x-[50%] gap-[2rem]"
@@ -31,7 +42,7 @@ const Navbar = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props, r
       <ul className="flex gap-5 text-md">
         {navItems.map((item: navItem, index) => (
           <li key={index} className="hover:underline hover:text-green-500">
-            <a href={item.link}>{item.text}</a>
+            <a href={item.link} onClick={(e)=>handleClick(e,item.link)}>{item.text}</a>
           </li>
         ))}
       </ul>

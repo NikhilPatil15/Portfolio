@@ -9,7 +9,9 @@ export default {
       fontFamily:"Quicksand",
       colors:{
         customBackground: 'rgb(8, 7, 11)',
-        customProjectBackground:'rgb(23, 28, 35)'
+        customAboutBackground:'rgb(8, 8, 22)',
+        customProjectBackground:'rgb(23, 28, 35)',
+        customTagBackground:'rgb(34, 34, 79)',
       },
       keyframes: {
         'spin-reverse': {

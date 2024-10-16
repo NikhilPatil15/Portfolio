@@ -1,14 +1,13 @@
-import { HeroSection, ProjectsSection } from "./components"
+import { AboutSection, HeroSection, ProjectsSection } from "./components";
 
 function App() {
-
-
   return (
     <>
-  <HeroSection/>
-  <ProjectsSection/>
+      <HeroSection />
+      <ProjectsSection />
+      <AboutSection />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

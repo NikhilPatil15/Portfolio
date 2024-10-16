@@ -3,16 +3,10 @@ import portfolioIllustration from "../assets/portfolio-illustration.png";
 import TypewriterComponent from "typewriter-effect";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import _ScrollTrigger, { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-const heroContentText = [
-  "React js",
-  "Node js",
-  "Express js",
-  "Mongodb",
-  "Next js",
-];
+
 
 const HeroSection = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -20,10 +14,12 @@ const HeroSection = () => {
   const navbarRef = useRef<HTMLDivElement | null>(null);
   const heroContentRef = useRef<HTMLDivElement | null>(null);
   const heroImageRef = useRef<HTMLDivElement | null>(null);
-  const heroImageContentRef = useRef<HTMLDivElement | null>(null);
+
   useGSAP(() => {
+
+    /* Update the elements as the section is triggered! */
     const heroSection = gsap.timeline({
-      ScrollTrigger: {
+      scrollTrigger: {
         trigger: hero.current,
         start: "top bottom",
         toggleActions: "play none restart none",
@@ -64,7 +60,7 @@ const HeroSection = () => {
       <Navbar ref={navbarRef} />
       <section className="max-w-[1220px] px-[2rem] py-[3rem] mt-5 md:p-[4rem] m-auto flex items-center justify-between gap-[4rem]  md:min-h-screen flex-col md:flex-row">
         <div className="flex-[1.5]" ref={heroContentRef}>
-          <h1 className="text-xl md:text-[2.5rem] font-bold  leading-relaxed py-[1rem]">
+          <h1 className="text-xl md:text-[2.5rem] font-bold leading-relaxed py-[1rem]">
             <span className="block text-xl md:text-3xl">
               Full Stack Developer.
             </span>
@@ -84,9 +80,6 @@ const HeroSection = () => {
                 delay: 50,
               }}
             />
-          </p>
-          <p className=" py-[0.5rem] md:px-0.5 text-gray-300 underline hover:text-green-400">
-            <a href="#education">Education</a>
           </p>
         </div>
         <div className="flex-1 relative" ref={heroImageRef}>

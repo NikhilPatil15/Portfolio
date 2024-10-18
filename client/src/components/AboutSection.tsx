@@ -18,7 +18,7 @@ const AboutSection = () => {
             scrollTrigger:{
               trigger:aboutSectionRef.current,
               start:"top bottom",
-              toggleActions:"restart none none none"
+              toggleActions:"restart none restart none"
             }    
         })
 
@@ -46,10 +46,10 @@ const AboutSection = () => {
 
   return (
     <section className="bg-customAboutBackground text-white flex items-center justify-center" ref={aboutSectionRef} id="about">
-      <div className="flex flex-col justify-center items-center md:items-start max-w-[1220px] min-h-screen w-full gap-3 md:gap-6 p-6 py-[1rem]  mt-[1rem] md:mt-0 md:p-[3rem] ">
+      <div className="flex flex-col justify-center items-center md:items-start max-w-[1220px] min-h-screen w-full gap-3 md:gap-6 p-6 py-[1rem]  mt-[1rem] md:mt-0 md:py-[3rem] ">
         <h2 className="text-4xl font-bold" ref={titleRef}>Profile</h2>
-        <div className="flex md:gap-[3rem] md:flex-row flex-col">
-          <div className="rounded-3xl md:p-4 md:py-[3rem]  p-2 shadow-[0_4px_15px_rgba(255,255,255,0.3)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.5)] transition-shadow duration-300" ref={cardRef}>
+        <div className="flex md:gap-[3rem] md:flex-row flex-col items-center shadow-[0_4px_15px_rgba(255,255,255,0.3)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.5)] transition-shadow duration-300 rounded-3xl">
+          <div className=" md:p-4 md:py-[3rem]  p-2 " ref={cardRef}>
             <div className="p-[2rem] md:p-[1rem]">
               <img
                 src="https://avatars.githubusercontent.com/u/137986217?s=400&u=87c6fdcfb10a5ef0cf6ce7a7dc08508817261afd&v=4"
@@ -93,8 +93,8 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
-          <div className="p-[2rem] md:p-0 mt-[1rem] " ref={descriptionRef}>
-            <h1 className="text-3xl">
+          <div className="p-[2rem] md:p-0 mt-[1rem] md:border-l border-white md:px-[2rem]" ref={descriptionRef}>
+            <h1 className="text-3xl text-center md:text-left">
               Hello <span>👋</span>
             </h1>
             <div className="flex flex-wrap flex-col text-base md:text-2xl gap-6 mt-[1rem]">

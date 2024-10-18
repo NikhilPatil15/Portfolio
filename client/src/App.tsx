@@ -1,4 +1,4 @@
-import { AboutSection, HeroSection, ProjectsSection } from "./components";
+import { AboutSection, ContactSection, HeroSection, ProjectsSection, ServicesSection, TechStackSection } from "./components";
 
 function App() {
   return (
@@ -6,6 +6,9 @@ function App() {
       <HeroSection />
       <ProjectsSection />
       <AboutSection />
+      <ServicesSection/>  
+      <TechStackSection/>
+      <ContactSection/>
     </>
   );
 }

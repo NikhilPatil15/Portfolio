@@ -21,7 +21,7 @@ const navItems: navItem[] = [
 ];
 
 // Turn Navbar into a forwardRef component
-const Navbar = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((props, ref) => {
+const Navbar = forwardRef<HTMLDivElement, React.PropsWithChildren<{}>>((_,ref) => {
 
   
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, link: string) => {

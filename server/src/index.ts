@@ -4,12 +4,21 @@ import { requestHandler } from './utils/requestHandler'
 import { errorAPI } from './utils/errorAPI'
 import { sendMail } from './utils/sendMail'
 import { successAPI } from './utils/successAPI'
+import cors from 'cors'
 
 const app = express()
 
 dotenv.config({
     path:'./.env'
 })
+
+app.use(
+    cors({
+        origin: process.env.CORS_ORIGIN,
+        credentials: true,
+    })
+);
+
 
 const PORT = process.env.PORT||5000
 
@@ -27,8 +36,8 @@ app.post('/email',requestHandler(async(req:Request,res:Response) => {
         throw new errorAPI(401,"Please fill all the fields!")
     }
 
-    console.log("USername: ", process.env.USER);
-    console.log("Password: ", process.env.PASSWORD);
+    // console.log("USername: ", process.env.USER);
+    // console.log("Password: ", process.env.PASSWORD);
     
     const mailSent = await sendMail(process.env.USER,process.env.PASSWORD,email,name,message)
 

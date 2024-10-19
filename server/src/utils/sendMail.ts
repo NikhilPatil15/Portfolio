@@ -3,7 +3,7 @@ import {createTransport} from 'nodemailer'
 const sendMail = async(userName:any,password:any,email:string,message:string,name:string) => {
   const transport = createTransport({
     host:'smtp.gmail.com',
-    port:465,
+    port:587,
     auth:{
         user:userName,
         pass:password

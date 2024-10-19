@@ -1,5 +1,6 @@
-import { AboutSection, ContactSection, HeroSection, ProjectsSection, ServicesSection, TechStackSection } from "./components";
 
+import { AboutSection, ContactSection, HeroSection, ProjectsSection, ServicesSection, TechStackSection } from "./components";
+import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
@@ -9,6 +10,7 @@ function App() {
       <ServicesSection/>  
       <TechStackSection/>
       <ContactSection/>
+    <Toaster position="top-right"/>
     </>
   );
 }
